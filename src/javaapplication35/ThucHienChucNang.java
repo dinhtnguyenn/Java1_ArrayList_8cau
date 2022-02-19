@@ -17,10 +17,9 @@ import java.util.Scanner;
 public class ThucHienChucNang {
 
     ArrayList<SinhVien> listSV = new ArrayList<>();
-    Scanner s = new Scanner(System.in);
 
     //sử dụng for
-    public void NhapDanhSach() {
+    public void NhapDanhSach(Scanner s) {
         System.out.println("Nhập số lượng sinh viên: ");
         int n = s.nextInt();
 
@@ -32,7 +31,7 @@ public class ThucHienChucNang {
     }
 
     //sử dụng do...while
-    public void NhapDanhSach2() {
+    public void NhapDanhSach2(Scanner s) {
         do {
             SinhVien sv = new SinhVien();
             sv.NhapTT();
@@ -64,8 +63,7 @@ public class ThucHienChucNang {
     }
 
     //cập nhật thông tin sv - theo mã
-    public void CapNhatThongTin() {
-        s.nextLine();
+    public void CapNhatThongTin(Scanner s) {
         System.out.println("Nhập mã số sinh viên cần cập nhật thông tin: ");
         String ma = s.nextLine();
         boolean flag = false; //flag = true: tìm thấy, flag = false: không tìm thấy
@@ -83,8 +81,7 @@ public class ThucHienChucNang {
     }
     
     //tìm sinh viên
-    public void TimSV(){
-        s.nextLine();
+    public void TimSV(Scanner s){
         System.out.println("Nhập mã số sv cần tìm: ");
         String ma = s.nextLine();
         boolean flag = false;
@@ -102,8 +99,7 @@ public class ThucHienChucNang {
     }
     
     //xóa sinh viên
-    public void XoaSV(){
-        s.nextLine();
+    public void XoaSV(Scanner s){
         System.out.println("Nhập mã số sv cần xóa: ");
         String ma = s.nextLine();
         boolean flag = false;

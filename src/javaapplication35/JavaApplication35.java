@@ -37,26 +37,27 @@ public class JavaApplication35 {
             System.out.println("8. Sắp xếp danh sách sinh viên tăng dần theo tên");
             System.out.println("0. Kết thúc chương trình");
             System.out.print("Mời bạn chọn chức năng: ");
-            int chon = s.nextInt();       
+            int chon = s.nextInt();   
+            s.nextLine();
             
             switch(chon){
                 case 1:
                     //cong viec 1
-                    chucNang.NhapDanhSach2();
+                    chucNang.NhapDanhSach2(s);
                     break;
                 case 2:
                     //cong viec 2
                     chucNang.XuatDanhSach2();
                     break;
                 case 3:
-                    chucNang.CapNhatThongTin();
+                    chucNang.CapNhatThongTin(s);
                     chucNang.XuatDanhSach();
                     break;
                 case 4:
-                    chucNang.TimSV();
+                    chucNang.TimSV(s);
                     break;
                 case 5:
-                    chucNang.XoaSV();
+                    chucNang.XoaSV(s);
                     chucNang.XuatDanhSach();
                     break;
                 case 6:
