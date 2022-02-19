@@ -51,14 +51,12 @@ public class JavaApplication35 {
                     break;
                 case 3:
                     chucNang.CapNhatThongTin(s);
-                    chucNang.XuatDanhSach();
                     break;
                 case 4:
                     chucNang.TimSV(s);
                     break;
                 case 5:
                     chucNang.XoaSV(s);
-                    chucNang.XuatDanhSach();
                     break;
                 case 6:
                     chucNang.Top5();

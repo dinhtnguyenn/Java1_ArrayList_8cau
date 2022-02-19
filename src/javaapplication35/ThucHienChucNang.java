@@ -77,47 +77,51 @@ public class ThucHienChucNang {
 
         if (flag == false) {
             System.out.println("Không tìm thấy sinh viên");
+        } else {
+            XuatDanhSach();
         }
     }
-    
+
     //tìm sinh viên
-    public void TimSV(Scanner s){
+    public void TimSV(Scanner s) {
         System.out.println("Nhập mã số sv cần tìm: ");
         String ma = s.nextLine();
         boolean flag = false;
-        for(SinhVien sv : listSV){
-            if(sv.getMasv().equalsIgnoreCase(ma)){
+        for (SinhVien sv : listSV) {
+            if (sv.getMasv().equalsIgnoreCase(ma)) {
                 sv.XuatTT();
                 flag = true;
                 break;
             }
         }
-        
-        if(flag == false){
+
+        if (flag == false) {
             System.out.println("Không tìm thấy sinh viên");
         }
     }
-    
+
     //xóa sinh viên
-    public void XoaSV(Scanner s){
+    public void XoaSV(Scanner s) {
         System.out.println("Nhập mã số sv cần xóa: ");
         String ma = s.nextLine();
         boolean flag = false;
-        for(SinhVien sv : listSV){
-            if(sv.getMasv().equalsIgnoreCase(ma)){
+        for (SinhVien sv : listSV) {
+            if (sv.getMasv().equalsIgnoreCase(ma)) {
                 listSV.remove(sv);
                 flag = true;
                 break;
             }
         }
-        
-        if(flag == false){
+
+        if (flag == false) {
             System.out.println("Không tìm thấy sinh viên");
+        }else {
+            XuatDanhSach();
         }
     }
-    
+
     //sắp xếp giảm dần theo điểm trung bình
-    public void SapXepGiamDanDTB(){
+    public void SapXepGiamDanDTB() {
 //        Comparator<SinhVien> comparator = new Comparator<SinhVien>() {
 //            @Override
 //            public int compare(SinhVien o1, SinhVien o2) {
@@ -129,35 +133,35 @@ public class ThucHienChucNang {
         //Collections.sort(danh_sach_sap_xep, (o1, o2) -> (int) (...))
         Collections.sort(listSV, (o1, o2) -> (int) (o2.getDiemTB() - o1.getDiemTB()));
     }
-    
+
     //sắp xếp tăng dần theo tên
-    public void SapXepTangDanTheoTen(){
+    public void SapXepTangDanTheoTen() {
         Collections.sort(listSV, (o1, o2) -> (int) (o1.getTensv().compareTo(o2.getTensv())));
     }
-    
+
     //top 5
-    public void Top5(){
+    public void Top5() {
         //b1: sắp xếp danh sách diem trung binh giam dan
         Collections.sort(listSV, (o1, o2) -> (int) (o2.getDiemTB() - o1.getDiemTB()));
-        
+
         //b2: lấy 5 sv đầu tiên
         //cach 1: for
-        for(int i = 0; i < 5; i++) {
+        for (int i = 0; i < 5; i++) {
             SinhVien sv = listSV.get(i);
             sv.XuatTT();
         }
-        
+
         //cach 2: foreach
         int count = 1;
-        for(SinhVien sv  : listSV){
+        for (SinhVien sv : listSV) {
             sv.XuatTT();
-            
-            if(count == 5){
+
+            if (count == 5) {
                 break;
             }
-            
+
             count++;
         }
-        
+
     }
 }
